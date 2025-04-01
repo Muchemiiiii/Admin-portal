@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Home() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
-
+  const navigator = useNavigate();
   const validateCredentials = (email, password) => {
     return email === "test@example.com" && password === "password123";
   };
@@ -13,15 +14,16 @@ function Login() {
     event.preventDefault();
     const isValid = validateCredentials(email, password);
     setMessage(isValid ? "Approved: Login successful!" : "Error: Invalid credentials.");
+    navigator("/dashboard")
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-200">
-      <div className="p-8 bg-white rounded shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">Login</h2>
+    <div className="h-screen w-screen flex items-center justify-center bg-blue-500">
+      <div className="p-10 bg-white rounded shadow-md w-full max-w-lg">
+        <h2 className="text-2xl font-bold mb-6 text-center text-gray-700">EASY STAY</h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-600">
+            <label htmlFor="email" className="block text-sm font-medium text-blue-600">
               Email
             </label>
             <input
@@ -48,7 +50,7 @@ function Login() {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
           >
             Login
           </button>
@@ -69,4 +71,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Home;

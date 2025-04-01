@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./Components/Sidebar";
-import Login from "./Components/Login";
+import Home from "./Components/Home";
+import Dashboard from "./Components/Dashboard";
+import "./App.css";
 
 const App = () => {
   const [selectedCar, setSelectedCar] = useState(null);
@@ -10,18 +11,17 @@ const App = () => {
    
      
     return (
-      <div className="mx-auto bd-red-200">
+      <div className="bd-red-200">
         <Router>
-          <Sidebar /> {/* Sidebar  is always visible */}
           <Routes>
-            <Route path="/Sidebar" element={<Sidebar />} />
-            <Route path="/Login" element={<Login />} />
+          <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
            
-  
+
+           
+  /
             {/* Add more routes as needed */}
           </Routes>
-          {/* Footer Section */}
-          <Footer />
         </Router>
       </div>
     );

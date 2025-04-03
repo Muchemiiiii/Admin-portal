@@ -56,27 +56,52 @@ const Dashboard = () => {
           <div className={`flex items-center px-4 py-3 ${activeTab === 'hotel' ? 'bg-indigo-900' : 'hover:bg-indigo-700'} cursor-pointer`}
                onClick={() => setActiveTab('hotel')}>
             <BiBed className="w-5 h-5" />
-            {sidebarOpen && <span className="ml-4">Hotel Management</span>}
+            {sidebarOpen && (
+  <a 
+    href="/HotelManagement" 
+    className="ml-4 text-white-500 hover:text-blue-700"
+  >
+    Hotel Management
+  </a>
+)}
+
           </div>
           <div className={`flex items-center px-4 py-3 ${activeTab === 'cars' ? 'bg-indigo-900' : 'hover:bg-indigo-700'} cursor-pointer`}
                onClick={() => setActiveTab('cars')}>
             <FiTruck className="w-5 h-5" />
-            {sidebarOpen && <span className="ml-4">Car Rentals</span>}
+            {sidebarOpen && (
+               <a 
+               href="/CarRental" 
+               className="ml-4 text-white-500 hover:text-blue-700"
+             >
+               Car Rental
+             </a>
+           )}
           </div>
           <div className={`flex items-center px-4 py-3 ${activeTab === 'bookings' ? 'bg-indigo-900' : 'hover:bg-indigo-700'} cursor-pointer`}
                onClick={() => setActiveTab('bookings')}>
             <FiCalendar className="w-5 h-5" />
-            {sidebarOpen && <span className="ml-4">Bookings</span>}
-          </div>
-          <div className={`flex items-center px-4 py-3 ${activeTab === 'customers' ? 'bg-indigo-900' : 'hover:bg-indigo-700'} cursor-pointer`}
-               onClick={() => setActiveTab('customers')}>
-            <FiUsers className="w-5 h-5" />
-            {sidebarOpen && <span className="ml-4">Customers</span>}
+            {sidebarOpen && (
+                <a 
+                href="/Bookings" 
+                className="ml-4 text-white-500 hover:text-blue-700"
+              >
+                Bookings
+              </a>
+            )}
+  
           </div>
           <div className={`flex items-center px-4 py-3 ${activeTab === 'payments' ? 'bg-indigo-900' : 'hover:bg-indigo-700'} cursor-pointer`}
                onClick={() => setActiveTab('payments')}>
             <FiCreditCard className="w-5 h-5" />
-            {sidebarOpen && <span className="ml-4">Payments</span>}
+            {sidebarOpen &&(
+                <a 
+                href="/Payments" 
+                className="ml-4 text-white-500 hover:text-blue-700"
+              >
+                Payments
+              </a>
+            )}
           </div>
           <div className={`flex items-center px-4 py-3 ${activeTab === 'settings' ? 'bg-indigo-900' : 'hover:bg-indigo-700'} cursor-pointer`}
                onClick={() => setActiveTab('settings')}>
